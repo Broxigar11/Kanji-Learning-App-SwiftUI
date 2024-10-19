@@ -7,24 +7,21 @@
 
 import Foundation
 
-enum ReadingType {
+public enum ReadingType {
     case onyomi
     case kunyomi
 }
 
-struct Reading {
-    let type: ReadingType
-    let kana: String
-    let romanization: String
-    let pronunciationHint: String?
-    let isPrimary: Bool
+public enum ReadingFrequency: Int {
+    case rare = 1
+    case uncommon = 2
+    case common = 3
+}
 
-    init(type: ReadingType, kana: String, romanization: String, pronunciationHint: String? = nil, isPrimary: Bool = false) {
-        self.type = type
-        self.kana = kana
-        self.romanization = romanization
-        self.pronunciationHint = pronunciationHint
-        self.isPrimary = isPrimary
-    }
+public struct Reading {
+    public let type: ReadingType
+    public let romanization: String
+    public let frequency: ReadingFrequency
+    public let vocabulary: [VocabularyEntry]
 }
 
