@@ -17,7 +17,11 @@ class LibraryViewModel: ObservableObject {
     private var canLoadMorePages = true
 
     func loadInitialKanji() {
-        kanjiList = []  // Reset the list when the view appears
+        kanjiList = [
+            Kanji(id: 1, character: "一", name: "One"),
+            Kanji(id: 2, character: "二", name: "Two"),
+            Kanji(id: 2, character: "三", name: "Three")
+        ]
         kanjiDetails = nil
         showDetailsSheet = false
         currentPage = 1
