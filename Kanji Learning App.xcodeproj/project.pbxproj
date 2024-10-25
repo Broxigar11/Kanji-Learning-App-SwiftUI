@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8436CB252CC558B300E49693 /* IdentifiableIntModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CB242CC558B300E49693 /* IdentifiableIntModel.swift */; };
+		8436CB282CC57B7000E49693 /* KanjiDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CB272CC57B7000E49693 /* KanjiDetailsViewModel.swift */; };
 		84818F092CB68D4800DE1F71 /* ReadingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84818F082CB68D4700DE1F71 /* ReadingModel.swift */; };
 		848622B02CBD2DF900DB502D /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848622AF2CBD2DF900DB502D /* LibraryView.swift */; };
 		848622B52CBD2E9A00DB502D /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848622B42CBD2E9A00DB502D /* LearningView.swift */; };
 		848622B82CBD2F1200DB502D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848622B72CBD2F1200DB502D /* SettingsView.swift */; };
 		848622BB2CBD2F3600DB502D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848622BA2CBD2F3600DB502D /* ProfileView.swift */; };
 		848622BD2CBD57F900DB502D /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848622BC2CBD57F900DB502D /* HomeNavigationView.swift */; };
-		848622BF2CBD583E00DB502D /* HomeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848622BE2CBD583E00DB502D /* HomeTitleView.swift */; };
 		848622C12CBD595300DB502D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848622C02CBD595300DB502D /* HomeViewModel.swift */; };
 		848622C32CBD965800DB502D /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848622C22CBD965800DB502D /* LibraryViewModel.swift */; };
 		84880D362CB8465000CDD73B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84880D352CB8465000CDD73B /* HomeView.swift */; };
 		848BFE702CC4361500C3EC7C /* KanjiDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BFE6F2CC4361500C3EC7C /* KanjiDetailsModel.swift */; };
 		848BFE722CC457BB00C3EC7C /* VocabularyEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BFE712CC457BB00C3EC7C /* VocabularyEntryModel.swift */; };
 		848BFE742CC458BE00C3EC7C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BFE732CC458BE00C3EC7C /* UserModel.swift */; };
+		848BFE772CC5211800C3EC7C /* KanjiDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BFE762CC5211800C3EC7C /* KanjiDetailsView.swift */; };
 		84D9D2402CB68A7F002CCEB5 /* Kanji_Learning_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9D23F2CB68A7F002CCEB5 /* Kanji_Learning_AppApp.swift */; };
 		84D9D2422CB68A7F002CCEB5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D9D2412CB68A7F002CCEB5 /* ContentView.swift */; };
 		84D9D2442CB68A81002CCEB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D9D2432CB68A81002CCEB5 /* Assets.xcassets */; };
@@ -48,19 +50,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8436CB242CC558B300E49693 /* IdentifiableIntModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableIntModel.swift; sourceTree = "<group>"; };
+		8436CB272CC57B7000E49693 /* KanjiDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiDetailsViewModel.swift; sourceTree = "<group>"; };
 		84818F082CB68D4700DE1F71 /* ReadingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingModel.swift; sourceTree = "<group>"; };
 		848622AF2CBD2DF900DB502D /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		848622B42CBD2E9A00DB502D /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
 		848622B72CBD2F1200DB502D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		848622BA2CBD2F3600DB502D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		848622BC2CBD57F900DB502D /* HomeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationView.swift; sourceTree = "<group>"; };
-		848622BE2CBD583E00DB502D /* HomeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTitleView.swift; sourceTree = "<group>"; };
 		848622C02CBD595300DB502D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		848622C22CBD965800DB502D /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		84880D352CB8465000CDD73B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		848BFE6F2CC4361500C3EC7C /* KanjiDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiDetailsModel.swift; sourceTree = "<group>"; };
 		848BFE712CC457BB00C3EC7C /* VocabularyEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyEntryModel.swift; sourceTree = "<group>"; };
 		848BFE732CC458BE00C3EC7C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		848BFE762CC5211800C3EC7C /* KanjiDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiDetailsView.swift; sourceTree = "<group>"; };
 		84D9D23C2CB68A7F002CCEB5 /* Kanji Learning App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kanji Learning App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D9D23F2CB68A7F002CCEB5 /* Kanji_Learning_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kanji_Learning_AppApp.swift; sourceTree = "<group>"; };
 		84D9D2412CB68A7F002CCEB5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 		8426DACC2CB6B976002FAAEF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				848BFE752CC5206800C3EC7C /* Shared */,
 				848622B92CBD2F2000DB502D /* ProfileView */,
 				848622B62CBD2EED00DB502D /* SettingsView */,
 				848622B12CBD2E1600DB502D /* LearningView */,
@@ -117,6 +122,7 @@
 			children = (
 				848622C02CBD595300DB502D /* HomeViewModel.swift */,
 				848622C22CBD965800DB502D /* LibraryViewModel.swift */,
+				8436CB272CC57B7000E49693 /* KanjiDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -129,6 +135,7 @@
 				848BFE6F2CC4361500C3EC7C /* KanjiDetailsModel.swift */,
 				848BFE712CC457BB00C3EC7C /* VocabularyEntryModel.swift */,
 				848BFE732CC458BE00C3EC7C /* UserModel.swift */,
+				8436CB242CC558B300E49693 /* IdentifiableIntModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,9 +177,16 @@
 			children = (
 				84880D352CB8465000CDD73B /* HomeView.swift */,
 				848622BC2CBD57F900DB502D /* HomeNavigationView.swift */,
-				848622BE2CBD583E00DB502D /* HomeTitleView.swift */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		848BFE752CC5206800C3EC7C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				848BFE762CC5211800C3EC7C /* KanjiDetailsView.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		84D9D2332CB68A7E002CCEB5 = {
@@ -364,16 +378,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				84818F092CB68D4800DE1F71 /* ReadingModel.swift in Sources */,
+				8436CB282CC57B7000E49693 /* KanjiDetailsViewModel.swift in Sources */,
 				84880D362CB8465000CDD73B /* HomeView.swift in Sources */,
 				848BFE722CC457BB00C3EC7C /* VocabularyEntryModel.swift in Sources */,
 				848622B52CBD2E9A00DB502D /* LearningView.swift in Sources */,
 				848622BD2CBD57F900DB502D /* HomeNavigationView.swift in Sources */,
 				84D9D2422CB68A7F002CCEB5 /* ContentView.swift in Sources */,
+				848BFE772CC5211800C3EC7C /* KanjiDetailsView.swift in Sources */,
 				848BFE702CC4361500C3EC7C /* KanjiDetailsModel.swift in Sources */,
 				848622B82CBD2F1200DB502D /* SettingsView.swift in Sources */,
 				848622B02CBD2DF900DB502D /* LibraryView.swift in Sources */,
-				848622BF2CBD583E00DB502D /* HomeTitleView.swift in Sources */,
 				848BFE742CC458BE00C3EC7C /* UserModel.swift in Sources */,
+				8436CB252CC558B300E49693 /* IdentifiableIntModel.swift in Sources */,
 				848622C12CBD595300DB502D /* HomeViewModel.swift in Sources */,
 				84D9D2402CB68A7F002CCEB5 /* Kanji_Learning_AppApp.swift in Sources */,
 				848622BB2CBD2F3600DB502D /* ProfileView.swift in Sources */,

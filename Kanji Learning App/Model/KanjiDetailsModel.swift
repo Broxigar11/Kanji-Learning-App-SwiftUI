@@ -8,11 +8,12 @@
 import Foundation
 
 public struct KanjiDetails {
+    public let id: Int
     public let character: Character
     public let name: String
     public let strokeCount: Int
     public let orderNumber: Int
-    public let mnemonic: String
+    public let mnemonic: String?
     public let composition: [Kanji]
     public let onyomi: [Reading]
     public let kunyomi: [Reading]

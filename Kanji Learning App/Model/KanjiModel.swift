@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Kanji {
+public struct Kanji: Identifiable {
     public let id: Int
     public let character: Character
     public let name: String

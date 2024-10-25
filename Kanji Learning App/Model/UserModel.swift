@@ -7,7 +7,8 @@
 
 
 /*
- ez az egész gondolom nem így kéne hogy legyen, mert a struct elvileg immutable, újragenerálja az egész objectet mikor megváltoztatod
+ ez az egész gondolom nem így kéne hogy legyen, mert a struct elvileg immutable,
+ újragenerálja az egész objectet mikor megváltoztatod.
  és majd a settingsView-ban állíthatóvá akarom rakni az összeset
  szóval ez egy ViewModel kellene hogy legyen?
  vagy mi a rákot kellene ezzel csinálnom ha model nem kéne hogy class legyen? xd

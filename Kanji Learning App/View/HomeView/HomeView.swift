@@ -15,7 +15,14 @@ struct HomeView: View {
             VStack {
                 Spacer()
                 
-                HomeTitleView(username: $viewModel.username)
+                VStack {
+                    Text("Kanji Learning App")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Text("Welcome, \(viewModel.username)")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
                 
                 Spacer()
                 
