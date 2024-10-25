@@ -20,7 +20,7 @@ class LibraryViewModel: ObservableObject {
         kanjiList = [
             Kanji(id: 1, character: "一", name: "One"),
             Kanji(id: 2, character: "二", name: "Two"),
-            Kanji(id: 2, character: "三", name: "Three")
+            Kanji(id: 3, character: "三", name: "Three")
         ]
         kanjiDetails = nil
         showDetailsSheet = false
