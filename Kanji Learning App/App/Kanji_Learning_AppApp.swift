@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Kanji_Learning_AppApp: App {
+    @StateObject private var container = DependencyContainer()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView(viewModel: container.makeHomeViewModel())
+                .environmentObject(container)
         }
     }
 }

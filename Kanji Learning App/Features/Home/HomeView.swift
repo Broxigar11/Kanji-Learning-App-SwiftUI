@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject private var container: DependencyContainer
     @StateObject var viewModel: HomeViewModel
     
     var body: some View {

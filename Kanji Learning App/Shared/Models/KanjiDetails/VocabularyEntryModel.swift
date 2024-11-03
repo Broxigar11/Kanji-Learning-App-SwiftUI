@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct VocabularyEntry {
+public struct VocabularyEntry: Encodable, Decodable {
     public let word: String
     public let meanings: String
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeNavigationView: View {
+    @EnvironmentObject var container: DependencyContainer
     @Binding var learningQueue: [Kanji]
     @Binding var reviewQueue: [Kanji]
     
@@ -41,7 +42,7 @@ struct HomeNavigationView: View {
             
             NavigationLink(
                 "Kanji Library",
-                destination: LibraryView()
+                destination: LibraryView(viewModel: container.makeLibraryViewModel())
             )
             .font(.headline)
             .fontWeight(.bold)

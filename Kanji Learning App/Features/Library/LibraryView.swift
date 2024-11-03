@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct LibraryView: View {
-    @StateObject var viewModel: LibraryViewModel = LibraryViewModel()
+    @EnvironmentObject private var container: DependencyContainer
+    @StateObject var viewModel: LibraryViewModel
     
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: nil, alignment: nil),
@@ -21,10 +22,10 @@ struct LibraryView: View {
                 ForEach(viewModel.kanjiList) { kanji in
                     GeometryReader { geometry in
                         Button(action: {
-                            viewModel.showDetails(of: kanji.id)
+                            viewModel.showDetails(of: kanji)
                         }) {
                             VStack {
-                                Text(String(kanji.character))
+                                Text(kanji.character)
                                     .font(.largeTitle)
                                     .padding(.bottom, 8)
                                 Text(kanji.name)
@@ -53,7 +54,7 @@ struct LibraryView: View {
             viewModel.loadInitialKanji()
         }
         .sheet(isPresented: ($viewModel.showDetailsSheet), content: {
-            KanjiDetailsView(kanji: $viewModel.kanjiDetails)
+            KanjiDetailsView(viewModel: container.makeKanjiDetailsViewModel(), kanji: $viewModel.kanjiDetails)
         })
     }
 }
