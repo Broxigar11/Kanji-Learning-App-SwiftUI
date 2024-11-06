@@ -11,7 +11,7 @@ struct LibraryView: View {
     @StateObject var viewModel: LibraryViewModel
     
     @EnvironmentObject private var container: DependencyContainer
-    @FocusState private var isFocused: Bool
+    @FocusState private var isSearchBarFocused: Bool
     
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: nil, alignment: nil),
@@ -71,7 +71,8 @@ struct LibraryView: View {
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
-                .opacity(isFocused ? 1.0 : 0.5)
+                .opacity(isSearchBarFocused ? 1.0 : 0.5)
+                .focused($isSearchBarFocused)
                 .cornerRadius(8)
                 .overlay(
                    Button(action: {
