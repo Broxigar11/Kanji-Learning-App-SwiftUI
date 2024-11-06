@@ -7,7 +7,14 @@
 
 import Foundation
 
-public struct VocabularyEntry: Encodable, Decodable {
+public struct VocabularyEntry: Identifiable, Encodable, Decodable {
+    public let id: UUID?
     public let word: String
     public let meanings: String
+    
+    init(id: UUID = UUID(), word: String, meanings: String) {
+        self.id = id
+        self.word = word
+        self.meanings = meanings
+    }
 }

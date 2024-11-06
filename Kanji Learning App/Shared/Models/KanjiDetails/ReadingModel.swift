@@ -18,10 +18,19 @@ public enum ReadingFrequency: String, Encodable, Decodable {
     case common
 }
 
-public struct Reading: Encodable, Decodable {
+public struct Reading: Identifiable, Encodable, Decodable {
+    public let id: UUID?
     public let romanization: String
     public let type: ReadingType
     public let frequency: ReadingFrequency
     public let vocabulary: [VocabularyEntry]
+    
+    init(id: UUID? = UUID(), romanization: String, type: ReadingType, frequency: ReadingFrequency, vocabulary: [VocabularyEntry]) {
+        self.id = id
+        self.romanization = romanization
+        self.type = type
+        self.frequency = frequency
+        self.vocabulary = vocabulary
+    }
 }
 
