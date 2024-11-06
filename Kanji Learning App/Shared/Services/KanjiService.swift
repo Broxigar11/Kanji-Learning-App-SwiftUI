@@ -24,4 +24,12 @@ class KanjiService {
         return apiService.get(endpoint: "\(self.baseURL)/page", parameters: parameters)
     }
     
+    func searchKanjiPage(page: Int = 0, pageSize: Int = 10, searchTerm: String) -> AnyPublisher<[Kanji], Error> {
+        let parameters = [
+            "page": "\(page)",
+            "pageSize": "\(pageSize)"
+        ]
+        return apiService.get(endpoint: "\(self.baseURL)/page/\(searchTerm)", parameters: parameters)
+    }
+    
 }

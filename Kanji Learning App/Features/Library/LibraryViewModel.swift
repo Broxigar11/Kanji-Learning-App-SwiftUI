@@ -13,11 +13,12 @@ class LibraryViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var kanjiDetails: Kanji? = nil
     @Published var showDetailsSheet: Bool = false
+    @Published var searchTerm: String = ""
     
     private let kanjiService: KanjiService
     private var cancellables = Set<AnyCancellable>()
-    private var currentPage = 1
-    private let pageSize = 20
+    private var currentPage = 0
+    private let pageSize = 10
     private var canLoadMorePages = true
 
     init(kanjiService: KanjiService) {
@@ -28,16 +29,20 @@ class LibraryViewModel: ObservableObject {
         kanjiList = []
         kanjiDetails = nil
         showDetailsSheet = false
-        currentPage = 1
+        currentPage = 0
         canLoadMorePages = true
-        loadMoreKanjiIfNeeded()
+        loadMoreKanji()
     }
-
-    func loadMoreKanjiIfNeeded() {
+    
+    func loadMoreKanji() {
         guard !isLoading && canLoadMorePages else { return }
         isLoading = true
 
-        kanjiService.fetchKanjiPage(page: currentPage, pageSize: pageSize)
+        let publisher: AnyPublisher<[Kanji], Error> = searchTerm.isEmpty ?
+            kanjiService.fetchKanjiPage(page: currentPage, pageSize: pageSize) :
+            kanjiService.searchKanjiPage(page: currentPage, pageSize: pageSize, searchTerm: searchTerm)
+
+        publisher
             .sink(
                 receiveCompletion: { [weak self] completion in
                     guard let self = self else { return }
