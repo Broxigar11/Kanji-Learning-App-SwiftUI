@@ -37,7 +37,8 @@ struct KanjiDetailsView: View {
                             }
                         }
                         
-                        if let onyomi = details.readings.filter({$0.type == ReadingType.on}), !onyomi.isEmpty {
+                        let onyomi = details.readings.filter({$0.type == ReadingType.on})
+                        if !onyomi.isEmpty {
                             ScrollView {
                                 VStack {
                                     Text("Onyomi")
@@ -56,8 +57,9 @@ struct KanjiDetailsView: View {
                                 }
                             }
                         }
-                    
-                        if let kunyomi = details.readings.filter({$0.type == ReadingType.kun}), !kunyomi.isEmpty {
+                        
+                        let kunyomi = details.readings.filter({$0.type == ReadingType.kun})
+                        if !kunyomi.isEmpty {
                             ScrollView {
                                 VStack {
                                     Text("Kunyomi")
@@ -77,7 +79,7 @@ struct KanjiDetailsView: View {
                             }
                         }
                         
-                        if let components = details.components, !components.isEmpty {
+                        if !details.components.isEmpty {
                             VStack {
                                 Text("Components")
                                     .bold()
@@ -88,7 +90,7 @@ struct KanjiDetailsView: View {
                                         columns: [GridItem(.adaptive(minimum: 50))],
                                         spacing: 10
                                     ){
-                                        ForEach(components) { component in
+                                        ForEach(details.components) { component in
                                             HStack {
                                                 VStack {
                                                     Button(action: {
@@ -107,7 +109,7 @@ struct KanjiDetailsView: View {
                                                     Text(component.name)
                                                 }
                                                 
-                                                if component != components.last {
+                                                if component != details.components.last {
                                                     Text(" + ")
                                                         .font(.title)
                                                 }
@@ -118,7 +120,7 @@ struct KanjiDetailsView: View {
                             }
                         }
                         
-                        if let compositions = details.usedInCompositions, !compositions.isEmpty {
+                        if !details.usedInCompositions.isEmpty {
                             VStack {
                                 Text("Used in compositions")
                                     .bold()
@@ -128,7 +130,7 @@ struct KanjiDetailsView: View {
                                         columns: [GridItem(.adaptive(minimum: 50, maximum: 50))],
                                         spacing: 10
                                     ){
-                                        ForEach(compositions) { component in
+                                        ForEach(details.usedInCompositions) { component in
                                             VStack {
                                                 Button(action: {
                                                     kanji = component
@@ -150,12 +152,6 @@ struct KanjiDetailsView: View {
                                     
                                 }
                             }
-                        }
-                        VStack {
-                            
-                        }
-                        VStack {
-                            
                         }
                     }
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
