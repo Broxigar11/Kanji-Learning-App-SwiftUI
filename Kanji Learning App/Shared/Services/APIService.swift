@@ -16,7 +16,7 @@ class APIService {
     }
     
     func get<T: Decodable>(endpoint: String, parameters: [String: String] = [:]) -> AnyPublisher<T, Error> {
-            var components = URLComponents(string: "\(baseURL)/\(endpoint)")!
+            var components = URLComponents(string: "\(baseURL)\(endpoint)")!
             components.queryItems = parameters.map { URLQueryItem(name: $0.key, value: $0.value) }
             
             var request = URLRequest(url: components.url!)
@@ -26,7 +26,7 @@ class APIService {
         }
         
         func post<T: Decodable, U: Encodable>(endpoint: String, body: U) -> AnyPublisher<T, Error> {
-            let url = URL(string: "\(baseURL)/\(endpoint)")!
+            let url = URL(string: "\(baseURL)\(endpoint)")!
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -36,7 +36,7 @@ class APIService {
         }
         
         func put<T: Decodable, U: Encodable>(endpoint: String, body: U) -> AnyPublisher<T, Error> {
-            let url = URL(string: "\(baseURL)/\(endpoint)")!
+            let url = URL(string: "\(baseURL)\(endpoint)")!
             var request = URLRequest(url: url)
             request.httpMethod = "PUT"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -46,7 +46,7 @@ class APIService {
         }
         
         func delete<T: Decodable>(endpoint: String) -> AnyPublisher<T, Error> {
-            let url = URL(string: "\(baseURL)/\(endpoint)")!
+            let url = URL(string: "\(baseURL)\(endpoint)")!
             var request = URLRequest(url: url)
             request.httpMethod = "DELETE"
             
