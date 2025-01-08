@@ -55,7 +55,7 @@ struct LibraryView: View {
             }
             
             searchBar
-                .frame(height: .infinity, alignment: .bottom)
+                .frame(maxHeight: .infinity, alignment: .bottom)
         }
         .onAppear {
             viewModel.loadInitialKanji()
@@ -86,7 +86,7 @@ struct LibraryView: View {
                    }
                     .disabled(viewModel.isLoading)
                     .opacity(viewModel.isLoading ? 1.0 : 0.5)
-                    .frame(width: .infinity, alignment: .trailing)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
                 )
                 .padding(.horizontal, 10)
         }
