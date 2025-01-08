@@ -13,7 +13,7 @@ struct Kanji_Learning_AppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView(viewModel: container.makeHomeViewModel())
+            HomeView()
                 .environmentObject(container)
                 .environmentObject(container.userManager)
                 .environmentObject(container.authManager)

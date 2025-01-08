@@ -10,7 +10,6 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject private var container: DependencyContainer
     @EnvironmentObject private var userManager: UserManager
-    @StateObject var viewModel: HomeViewModel
     
     var body: some View {
         NavigationView {

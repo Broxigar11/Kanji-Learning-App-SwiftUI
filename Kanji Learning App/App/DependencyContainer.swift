@@ -30,16 +30,12 @@ final class DependencyContainer: ObservableObject {
         self.authManager = AuthManager(userManager: self.userManager, authService: self.authService)
     }
     
-    func makeHomeViewModel() -> HomeViewModel {
-        HomeViewModel()
-    }
-    
     func makeLibraryViewModel() -> LibraryViewModel {
         LibraryViewModel(kanjiService: self.kanjiService)
     }
     
-    func makeLearningViewModel() -> HomeViewModel {
-        HomeViewModel()
+    func makeLearningViewModel() -> LearningViewModel {
+        LearningViewModel()
     }
     
     func makeKanjiDetailsViewModel() -> KanjiDetailsViewModel {
