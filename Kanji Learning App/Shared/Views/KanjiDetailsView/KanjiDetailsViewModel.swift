@@ -11,10 +11,10 @@ import Combine
 class KanjiDetailsViewModel: ObservableObject {
     @Published var kanjiDetails: KanjiDetails?
     
-    private let kanjiDetailsService: KanjiDetailsService
+    private let kanjiDetailsService: KanjiDetailsServiceProtocol
     private var cancellables = Set<AnyCancellable>()
     
-    init(kanjiDetailsService: KanjiDetailsService) {
+    init(kanjiDetailsService: KanjiDetailsServiceProtocol) {
         self.kanjiDetailsService = kanjiDetailsService
     }
     
