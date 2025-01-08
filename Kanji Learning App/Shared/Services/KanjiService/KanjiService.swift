@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class KanjiService {
+class KanjiService: KanjiServiceProtocol {
     private let apiService: APIService
     private let baseURL = "/kanji"
     
@@ -21,7 +21,12 @@ class KanjiService {
             "page": "\(page)",
             "pageSize": "\(pageSize)"
         ]
-        return apiService.get(endpoint: "\(self.baseURL)/page", parameters: parameters)
+        
+        return apiService.request(
+            endpoint: "\(self.baseURL)/page",
+            method: .GET,
+            parameters: parameters
+        )
     }
     
     func searchKanjiPage(page: Int = 0, pageSize: Int = 10, searchTerm: String) -> AnyPublisher<[Kanji], Error> {
@@ -29,7 +34,10 @@ class KanjiService {
             "page": "\(page)",
             "pageSize": "\(pageSize)"
         ]
-        return apiService.get(endpoint: "\(self.baseURL)/page/\(searchTerm)", parameters: parameters)
+        return apiService.request(
+            endpoint: "\(self.baseURL)/page/\(searchTerm)",
+            method: .GET,
+            parameters: parameters)
     }
     
 }

@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class KanjiDetailsService {
+class KanjiDetailsService: KanjiDetailsServiceProtocol {
     private let apiService: APIService
     private let baseURL = "/kanji/details"
     
@@ -17,10 +17,10 @@ class KanjiDetailsService {
     }
     
     func fetchKanjiDetails(of name: String) -> AnyPublisher<KanjiDetails, Error> {
-        return apiService.get(endpoint: "\(self.baseURL)/\(name)")
+        return apiService.request(endpoint: "\(self.baseURL)/\(name)", method: .GET)
     }
     
     func fetchNextKanjiDetails(by orderNumber: Int) -> AnyPublisher<KanjiDetails, Error> {
-        return apiService.get(endpoint: "\(self.baseURL)/next\(orderNumber)")
+        return apiService.request(endpoint: "\(self.baseURL)/next\(orderNumber)", method: .GET)
     }
 }
