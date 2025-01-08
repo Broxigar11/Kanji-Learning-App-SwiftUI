@@ -12,11 +12,11 @@ final class DependencyContainer: ObservableObject {
     var userManager: UserManager
     var authManager: AuthManager
     
-    let userService: UserServiceProtocol
-    let authService: AuthServiceProtocol
-    let kanjiService: KanjiServiceProtocol
-    let kanjiDetailsService: KanjiDetailsServiceProtocol
-    let reviewingService: ReviewingServiceProtocol
+    private let userService: UserServiceProtocol
+    private let authService: AuthServiceProtocol
+    private let kanjiService: KanjiServiceProtocol
+    private let kanjiDetailsService: KanjiDetailsServiceProtocol
+    private let reviewingService: ReviewingServiceProtocol
     
     init(apiService: APIService = APIService()) {
         self.kanjiService = KanjiService(apiService: apiService)
@@ -47,6 +47,10 @@ final class DependencyContainer: ObservableObject {
     }
     
     func makeReviewingViewModel() -> ReviewingViewModel {
-        ReviewingViewModel(reviewingService: self.reviewingService)
+        guard let kanji = userManager.nextKanjiToReview else {
+            fatalError("nextKanjiToReview should never be nil when creating ReviewingViewModel")
+        }
+        
+        return ReviewingViewModel(reviewingService: self.reviewingService, kanji: kanji)
     }
 }
