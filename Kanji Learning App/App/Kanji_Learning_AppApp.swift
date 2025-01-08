@@ -15,6 +15,8 @@ struct Kanji_Learning_AppApp: App {
         WindowGroup {
             HomeView(viewModel: container.makeHomeViewModel())
                 .environmentObject(container)
+                .environmentObject(container.userManager)
+                .environmentObject(container.authManager)
         }
     }
 }
