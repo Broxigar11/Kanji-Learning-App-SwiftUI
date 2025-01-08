@@ -17,4 +17,11 @@ public struct Kanji: Identifiable, Encodable, Decodable, Equatable {
         self.character = character
         self.name = name
     }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decodeIfPresent(UUID.self, forKey: .id) ?? UUID()
+        self.character = try container.decode(String.self, forKey: .character)
+        self.name = try container.decode(String.self, forKey: .name)
+    }
 }

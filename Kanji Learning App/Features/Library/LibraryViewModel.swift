@@ -15,13 +15,13 @@ class LibraryViewModel: ObservableObject {
     @Published var showDetailsSheet: Bool = false
     @Published var searchTerm: String = ""
     
-    private let kanjiService: KanjiService
+    private let kanjiService: KanjiServiceProtocol
     private var cancellables = Set<AnyCancellable>()
     private var currentPage = 0
     private let pageSize = 10
     private var canLoadMorePages = true
 
-    init(kanjiService: KanjiService) {
+    init(kanjiService: KanjiServiceProtocol) {
         self.kanjiService = kanjiService
     }
     
@@ -43,6 +43,7 @@ class LibraryViewModel: ObservableObject {
             kanjiService.searchKanjiPage(page: currentPage, pageSize: pageSize, searchTerm: searchTerm)
 
         publisher
+            .receive(on: DispatchQueue.main)
             .sink(
                 receiveCompletion: { [weak self] completion in
                     guard let self = self else { return }

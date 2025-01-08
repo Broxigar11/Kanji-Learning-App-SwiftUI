@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct KanjiDetails: Encodable, Decodable {
+public struct KanjiDetails: Codable {
     public let character: String
     public let name: String
     public let strokeCount: Int
