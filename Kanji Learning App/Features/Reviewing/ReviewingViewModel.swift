@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 
 public class ReviewingViewModel: ObservableObject {
-    @EnvironmentObject var userManager: UserManager
     @Published var review: Review?
     @Published var isLoading = false
     
@@ -17,14 +16,14 @@ public class ReviewingViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     private var questions: [Quiz] = []
     
-    init(reviewingService: ReviewingServiceProtocol) {
+    init(reviewingService: ReviewingServiceProtocol, kanji: Kanji) {
         self.reviewingService = reviewingService
-        loadReview()
+        loadReview(of: kanji)
     }
     
-    private func loadReview() {
+    private func loadReview(of kanji: Kanji) {
         isLoading = true
-        fetchProgress(of: userManager.nextKanjiToReview!)
+        fetchProgress(of: kanji)
     }
     
     private func fetchProgress(of kanji: Kanji) {

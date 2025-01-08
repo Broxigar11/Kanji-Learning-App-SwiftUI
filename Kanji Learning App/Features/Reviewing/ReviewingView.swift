@@ -10,11 +10,14 @@ import SwiftUI
 import UIKit
 
 public struct ReviewingView: UIViewControllerRepresentable {
-    @EnvironmentObject var container: DependencyContainer
+    private var viewModel: ReviewingViewModel
+    
+    init(viewModel: ReviewingViewModel) {
+        self.viewModel = viewModel
+    }
     
     public func makeUIViewController(context: Context) -> ReviewingViewController {
-        let viewModel = container.makeReviewingViewModel()
-        return ReviewingViewController(viewModel: viewModel)
+        return ReviewingViewController(viewModel: self.viewModel)
     }
     
     public func updateUIViewController(_ uiViewController: ReviewingViewController, context: Context) {

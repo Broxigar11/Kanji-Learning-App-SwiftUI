@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject private var container: DependencyContainer
+    @EnvironmentObject private var userManager: UserManager
     @StateObject var viewModel: HomeViewModel
     
     var body: some View {
@@ -20,17 +21,17 @@ struct HomeView: View {
                     Text("Kanji Learning App")
                         .font(.title)
                         .fontWeight(.bold)
-                    Text("Welcome, \(viewModel.username)")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+                    
+                    if let username = userManager.username {
+                        Text("Welcome, \(username)")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                    }
                 }
                 
                 Spacer()
                 
-                HomeNavigationView(
-                    learningQueue: $viewModel.learningQueue,
-                    reviewQueue: $viewModel.learningQueue
-                )
+                navigationView
                 
                 Spacer()
             }
@@ -53,6 +54,44 @@ struct HomeView: View {
                     )
                 }
             }
+        }
+        .onAppear {
+            container.authManager.login()
+        }
+    }
+    
+    var navigationView: some View {
+        VStack {
+            VStack {
+                NavigationLink(
+                    "New Kanji",
+                    destination: LearningView()
+                )
+                .font(.headline)
+                .fontWeight(.bold)
+            }
+            
+            if userManager.nextKanjiToReview != nil {
+                VStack {
+                    NavigationLink(
+                        "Kanji Review",
+                        destination: ReviewingView(viewModel: container.makeReviewingViewModel())
+                    )
+                    .font(.headline)
+                    .fontWeight(.bold)
+                
+                    Text("Review Queue: \(userManager.userProgress!.kanjiReviewList.count) kanji due")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+            }
+            
+            NavigationLink(
+                "Kanji Library",
+                destination: LibraryView(viewModel: container.makeLibraryViewModel())
+            )
+            .font(.headline)
+            .fontWeight(.bold)
         }
     }
 }
