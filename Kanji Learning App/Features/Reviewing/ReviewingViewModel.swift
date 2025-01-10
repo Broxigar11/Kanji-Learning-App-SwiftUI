@@ -63,10 +63,9 @@ public class ReviewingViewModel: ObservableObject {
             isQuizFinished = true
             return
         }
-        
-        self.question = questions[currentQuestionIndex].question
-        self.answer = nil
         self.isAnswerCorrect = nil
+        self.answer = nil
+        self.question = questions[currentQuestionIndex].question
     }
     
     private func setupQuestions(for kanji: KanjiDetails) {
