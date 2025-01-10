@@ -8,7 +8,7 @@
 import Foundation
 
 struct KanjiProgress: Codable {
-    public let kanji: KanjiDetails
+    public let kanjiDetails: KanjiDetails
     public var reviewStreak: UInt8
     public var nextReviewDate: Date
 }

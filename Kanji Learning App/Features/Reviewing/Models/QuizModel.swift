@@ -8,4 +8,5 @@
 struct Quiz {
     let question: String
     let answer: String
+    var isAnswerCorrect: Bool?
 }

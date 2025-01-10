@@ -18,7 +18,7 @@ class ReviewingService: ReviewingServiceProtocol {
     
     func fetchKanjiProgress(of name: String) -> AnyPublisher<KanjiProgress, Error> {
         let mockProgress = KanjiProgress(
-            kanji: KanjiDetails(
+            kanjiDetails: KanjiDetails(
                 character: "皆",
                 name: "Everyone",
                 strokeCount: 9,
