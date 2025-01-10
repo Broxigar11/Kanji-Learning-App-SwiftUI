@@ -66,29 +66,30 @@ struct LibraryView: View {
     }
     
     var searchBar: some View {
-        HStack {
-            TextField("Search...", text: $viewModel.searchTerm)
-                .padding(7)
-                .padding(.horizontal, 25)
-                .background(Color(.systemGray6))
-                .opacity(isSearchBarFocused ? 1.0 : 0.5)
-                .focused($isSearchBarFocused)
-                .cornerRadius(8)
-                .overlay(
-                   Button(action: {
-                       // TODO: scroll to top
-                       viewModel.loadInitialKanji()
-                   }) {
-                       Image(systemName: "magnifyingglass")
-                           .foregroundColor(.gray)
-                           .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                           .padding(.leading, 8)
-                   }
-                    .disabled(viewModel.isLoading)
-                    .opacity(viewModel.isLoading ? 1.0 : 0.5)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                )
-                .padding(.horizontal, 10)
-        }
+        TextField("Search...", text: $viewModel.searchTerm)
+            .padding(7)
+            .padding(.horizontal, 25)
+            .background(Color(.systemGray6))
+            .opacity(isSearchBarFocused ? 1.0 : 0.5)
+            .focused($isSearchBarFocused)
+            .cornerRadius(8)
+            .onSubmit {
+                viewModel.loadInitialKanji()
+            }
+            .overlay(
+               Button(action: {
+                   // TODO: scroll to top
+                   viewModel.loadInitialKanji()
+               }) {
+                   Image(systemName: "magnifyingglass")
+                       .foregroundColor(.gray)
+                       .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
+                       .padding(.trailing, 15)
+               }
+                .disabled(viewModel.isLoading)
+                .opacity(viewModel.isLoading ? 1.0 : 0.5)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+            )
+            .padding(.horizontal, 10)
     }
 }
